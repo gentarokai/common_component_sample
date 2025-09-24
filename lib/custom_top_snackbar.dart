@@ -58,7 +58,7 @@ class _AnimatedTopSnackBar extends HookWidget {
       () => Tween<Offset>(
         begin: const Offset(0, -1),
         end: Offset.zero,
-      ).animate(CurvedAnimation(parent: controller, curve: Curves.easeOutBack)),
+      ).animate(CurvedAnimation(parent: controller, curve: Curves.ease)),
       [controller],
     );
 
@@ -85,7 +85,7 @@ class _AnimatedTopSnackBar extends HookWidget {
     }, []);
 
     final dismiss = useCallback(() async {
-      await controller.reverse();
+      // await controller.reverse();
       onDismiss();
     }, [controller, onDismiss]);
 
